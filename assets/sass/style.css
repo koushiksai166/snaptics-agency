@@ -470,7 +470,7 @@ textarea {
     height: 210px;
   }
   .cs_height_219 {
-    height: 219px;
+    height: 200px;
   }
   .cs_height_385 {
     height: 385px;
@@ -3320,7 +3320,7 @@ label {
   display: inline-block;
 }
 .cs_site_branding img {
-  max-height: 45px;
+  max-height: 200px;
 }
 
 @media screen and (min-width: 1200px) {
@@ -3751,7 +3751,7 @@ label {
     margin-right: 0;
   }
   .cs_site_branding img {
-    max-height: 32px;
+    max-height: 100px;
   }
   .cs_site_header.cs_style1 .cs_btn span {
     display: none;
@@ -4719,7 +4719,7 @@ label {
     gap: 20px;
   }
   .cs_hero.cs_style5 .cs_marketing_agency_section.cs_style_1 .cs_text_img .cs_banner_text {
-    font-size: 52px;
+    font-size: 51px;
   }
   .cs_hero.cs_style5 .cs_marketing_agency_section.cs_style_1 .cs_text_btn {
     flex-direction: column-reverse;
@@ -6424,7 +6424,7 @@ label {
 .cs_service_details {
   display: flex;
   flex-wrap: wrap;
-  gap: 3%;
+  /* gap: 3%; */
 }
 .cs_service_details .cs_service_details_img {
   flex-basis: 57%;
@@ -6435,11 +6435,11 @@ label {
 .cs_service_details .cs_service_details_text .anim_text_upanddowns {
   margin-top: 40px;
 }
-.cs_service_details.cs_type_2 {
+/* .cs_service_details.cs_type_2 {
   gap: 7%;
-}
+} */
 .cs_service_details.cs_type_2 .cs_service_details_img {
-  flex-basis: 53%;
+  flex-basis: 0%;
 }
 
 @media screen and (max-width: 991px) {
