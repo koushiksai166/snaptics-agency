@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import smtplib
 from email.mime.text import MIMEText
+import os
 
 app = Flask(__name__)
 CORS(app)  # Allows requests from different ports (like 5501)
@@ -42,4 +43,5 @@ def send_email():
         return jsonify({"status": "error", "message": str(e)})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))  # Use PORT from environment if available
+    app.run(host='0.0.0.0', port=port, debug=True)
