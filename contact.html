@@ -584,13 +584,13 @@
 
 
     <script>
-document.getElementById("contactForm").addEventListener("submit", function(e) {
-    e.preventDefault(); // Prevent form from reloading page
+        document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // Prevent page reload
 
     const form = e.target;
     const formData = new FormData(form);
 
-    fetch("http://127.0.0.1:5000/send-email", {
+    fetch("https://snaptics-new.onrender.com/send-email", {
         method: "POST",
         body: formData
     })
@@ -598,15 +598,16 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
     .then(data => {
         if (data.status === "success") {
             alert("Email has been sent successfully!");
-            form.reset(); // Optionally reset the form
+            form.reset();
         } else {
             alert("Error: " + data.message);
         }
     })
     .catch(error => {
-        alert("Something went wrong: " + error);
+        alert("Server error: " + error);
     });
 });
+
 </script>
 
 
