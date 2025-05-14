@@ -1529,6 +1529,13 @@ label {
   padding: 5px 0px;
   animation: slide-left 20s linear infinite;
 }
+.cs_moving_section {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  padding: 5px 0px;
+  animation: slide-left 20s linear infinite;
+}
 .cs_moving_section.cs_stroke_text {
   margin: 0 10px;
 }
@@ -1561,6 +1568,36 @@ label {
     transform: translateX(-100%);
   }
 }
+/* opposite direction start here  */
+.cs_animation_ltr {
+  animation: slide-left 40s linear infinite;
+}
+
+.cs_animation_rtl {
+  animation: slide-right 40s linear infinite;
+}
+
+@keyframes slide-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slide-right {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+/* opposite direction ends here  */
+
+
+
 .cs_video_block_1_wrap {
   position: relative;
 }
