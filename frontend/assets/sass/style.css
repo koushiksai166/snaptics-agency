@@ -1568,7 +1568,31 @@ label {
     transform: translateX(-100%);
   }
 }
-/* opposite direction start here  */
+
+
+/* styles for about.html starts here  */
+@keyframes slide-right {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.cs_animation_speed_40_reverse {
+  animation: slide-right 40s linear infinite;
+}
+
+.cs_animation_speed_50_reverse {
+  animation: slide-right 50s linear infinite;
+}
+ /* styles for about.html ends here  */
+
+
+
+
+
+/* opposite direction start here in index.html  */
 .cs_animation_ltr {
   animation: slide-left 40s linear infinite;
 }
