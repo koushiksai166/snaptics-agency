@@ -180,7 +180,7 @@ address {
 
 img {
   border: 0;
-  max-width: 200%;
+  max-width: 100%;
   height: auto;
 }
 
@@ -6746,3 +6746,12 @@ label {
     margin-top: 0px;
   }
 }/*# sourceMappingURL=style.css.map */
+
+
+.cs_partner_logo img {
+    width: 250px;   /* or whatever fixed width you prefer */
+    height: 250px;   /* or adjust height as needed */
+    object-fit: contain; /* maintains aspect ratio */
+    display: block;
+    margin: 0 auto;
+}
