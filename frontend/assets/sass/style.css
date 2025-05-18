@@ -1807,7 +1807,7 @@ label {
 }
 .cs_section_heading_hr.cs_style_1 .cs_hr_design {
   width: 100px;
-  border: 0.5px solid #ff6b00;
+  border: 0.5px solid: #ff6b00;
 }
 .cs_section_heading_hr.cs_style_1.cs_color_1 .cs_hr_design {
   border: 0.5px solid #454545;
@@ -2685,8 +2685,8 @@ label {
 }
 
 .cs_slider_3 {
-  overflow: hidden;
-  width: 84vw;
+  /* overflow: hidden; */
+  width: 54vw;
 }
 .cs_slider_3 .swiper-slide {
   width: 420px;
