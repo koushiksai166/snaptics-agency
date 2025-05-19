@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Snaptics - Brand Strategy Consultancy</title>
+  <link rel="icon" href="../frontend/assets/img/" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
+    .carousel-item img {
+  height: 100vh;
+  width: 100%;
+  object-fit: contain;
+  background-color: #00000000;
+}
+
+
+    .redirect-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: none;
+      z-index: 10;
+    }
+
+    .carousel-item:last-child .redirect-button {
+      display: block;
+    }
+
+  .redirect-button a {
+  display: inline-block;
+  padding: 20px 30px;
+  font-size: 1.0rem;
+  font-weight: bold;
+  background-color: #DC143C;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .redirect-button a {
+    padding: 15px 25px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .redirect-button a {
+    padding: 10px 18px;
+    font-size: 0.6rem;
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+
+/* Very small devices (≤360px) */
+@media (max-width: 360px) {
+  .redirect-button a {
+    padding: 10px 15px;
+    font-size: 0.85rem;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+
+  <div id="presentationCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" data-bs-keyboard="true">
+    <div class="carousel-inner">
+
+      <!-- Slides 1 to 13 -->
+      <div class="carousel-item active"><img src="./img/1.jpg" class="d-block" alt="Slide 1" /></div>
+      <div class="carousel-item"><img src="./img/2.jpg" class="d-block" alt="Slide 2" /></div>
+      <div class="carousel-item"><img src="./img/3.jpg" class="d-block" alt="Slide 3" /></div>
+      <div class="carousel-item"><img src="./img/4.jpg" class="d-block" alt="Slide 4" /></div>
+      <div class="carousel-item"><img src="./img/5.jpg" class="d-block" alt="Slide 5" /></div>
+      <div class="carousel-item"><img src="./img/6.jpg" class="d-block" alt="Slide 6" /></div>
+      <div class="carousel-item"><img src="./img/7.jpg" class="d-block" alt="Slide 7" /></div>
+      <div class="carousel-item"><img src="./img/8.jpg" class="d-block" alt="Slide 8" /></div>
+      <div class="carousel-item"><img src="./img/9.jpg" class="d-block" alt="Slide 9" /></div>
+      <div class="carousel-item"><img src="./img/10.jpg" class="d-block" alt="Slide 10" /></div>
+      <div class="carousel-item"><img src="./img/11.jpg" class="d-block" alt="Slide 11" /></div>
+      <div class="carousel-item"><img src="./img/12.jpg" class="d-block" alt="Slide 12" /></div>
+      <div class="carousel-item"><img src="./img/13.jpg" class="d-block" alt="Slide 13" /></div>
+
+      <!-- Slide 14 -->
+      <div class="carousel-item position-relative">
+        <img src="./img/14.jpg" class="d-block" alt="Slide 14" />
+        <div class="redirect-button">
+          <a href="../frontend/index.html" class="btn btn-success rounded-pill">
+            Click Here to Visit
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Navigation controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#presentationCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#presentationCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
