@@ -1493,7 +1493,7 @@ label {
 }
 
 .cs_stroke_number {
-  font-size: 100px;
+  font-size: 80px;
   font-weight: 900;
   line-height: 1.2em;
   color: transparent;
@@ -1775,10 +1775,9 @@ label {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
 }
 .cs_section_heading.cs_style_1.cs_type_1 .cs_section_heading_text {
-  max-width: 70%;
+  max-width: 80%;
 }
 .cs_section_heading.cs_style_1.cs_type_1 .cs_section_heading_right {
   flex: 1;
@@ -1789,6 +1788,7 @@ label {
   align-items: center;
   text-align: center;
   justify-content: center;
+  gap: 50px;
 }
 .cs_section_heading.cs_style_1.cs_type_2 .cs_section_heading_text {
   max-width: 70%;
@@ -2689,7 +2689,7 @@ label {
   width: 54vw;
 }
 .cs_slider_3 .swiper-slide {
-  width: 420px;
+  width: 500px;
 }
 .cs_slider_3 .swiper-slide:nth-child(odd) {
   margin-top: 45px;
@@ -3405,7 +3405,7 @@ label {
   display: inline-block;
 }
 .cs_site_branding img {
-  max-height: 200px;
+  max-height: 180px;
 }
 
 @media screen and (min-width: 1200px) {
@@ -4532,11 +4532,12 @@ label {
 .cs_hero.cs_style5 .cs_marketing_agency_section.cs_style_1 .cs_text_img {
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
   gap: 77px;
   position: relative;
 }
 .cs_hero.cs_style5 .cs_marketing_agency_section.cs_style_1 .cs_text_img .cs_banner_text {
-  font-size: 230px;
+  font-size: 135px;
   font-weight: 900;
   order: 1;
 }
@@ -4554,7 +4555,7 @@ label {
   order: 1;
 }
 .cs_hero.cs_style5 .cs_marketing_agency_section.cs_style_1 .cs_text_btn .cs_banner_text.cs_text_size {
-  font-size: 216px;
+  font-size: 135px;
 }
 .cs_hero.cs_style5 .cs_marketing_agency_section.cs_style_1 .cs_text_btn .cs_img {
   order: 2;
@@ -4564,14 +4565,14 @@ label {
   height: 144px;
 }
 .cs_hero.cs_style5 .cs_marketing_agency_section.cs_style_1 .cs_subtext {
-  font-size: 16px;
-  margin-left: 18%;
-  margin-right: 23%;
+  font-size: 20px;
+  /* margin-left: 18%;
+  margin-right: 23%; */
 }
 .cs_hero.cs_style5 .cs_icon_section {
   position: absolute;
   right: -20px;
-  width: 301px;
+  width: 300px;
   top: 35%;
   display: flex;
   align-items: center;
@@ -5153,12 +5154,12 @@ label {
 
 .cs_card.cs_style_2 {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   position: relative;
 }
 .cs_card.cs_style_2 .cs_card_right {
   flex: none;
-  width: 160px;
+  width: 150px;
 }
 .cs_card.cs_style_2 .cs_card_brand {
   font-size: 22px;
@@ -5509,7 +5510,7 @@ label {
   align-items: center;
   text-align: center;
   text-transform: capitalize;
-  padding: 150px 250px;
+  padding: 100px 100px;
 }
 .cs_learning_project .cs_section_heading.cs_style_1 .cs_section_heading_text .cs_section_title_3.cs_color_2 {
   color: #fff;
@@ -6509,7 +6510,7 @@ label {
 .cs_service_details {
   display: flex;
   flex-wrap: wrap;
-  /* gap: 3%; */
+   gap: 3%; 
 }
 .cs_service_details .cs_service_details_img {
   flex-basis: 57%;
@@ -6828,6 +6829,8 @@ label {
     max-height: 200px;
   }
 }
+
+
 
 
 
