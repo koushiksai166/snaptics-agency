@@ -31,7 +31,7 @@
 | 19. Words Typing Animation
 | 20. Heading Title Animation
 | 21. P tag text Animation
-| 22. Blog section Animation
+| 22. Blogs section Animation
 | 23. Startup Agency Animation
 | 24. Stagger Text Up and Downs Animation
 | 25. ShowsZoom Center Animation
@@ -738,7 +738,7 @@
   });
 
   /*--------------------------------------------------------------
-   22. Blog section Animation
+   22. Blogs section Animation
  --------------------------------------------------------------*/
 
   let blogAnim = gsap.utils.toArray(".anim_blog");
