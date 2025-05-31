@@ -204,195 +204,706 @@
             </div>
         </section>
         <!--End Some Recent Project Titel  -->
-        <div class="cs_height_50 cs_height_lg_25"></div>
+        <!-- <div class="cs_height_50 cs_height_lg_25"></div> -->
 
 <!-- Start Some Recent Project Show -->
-<section class="cs_ui_design">
-    <div class="container">
-        <div>
-            <div class="row">
-                <div class="cs_isotop_item_menu col-md-10">
-                    <ul class="anim_div_ShowZoom">
-                        <li data-filter="*">All</li>
-                        <li data-filter=".cs_tech">Tech</li>
-                        <li data-filter=".cs_networking">Networking</li>
-                        <li data-filter=".cs_healthcare">Health-Care</li>
-                        <li data-filter=".cs_realestate">Real-Estate</li>
-                        <li data-filter=".cs_education">Education</li>
-                        <li data-filter=".cs_lifestyle">Life-Style</li>
-                    </ul>
-                </div>
-            </div>
+<style>
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f7f9fc;
+    margin: 0;
+    padding: 0;
+  }
 
-            <div class="cs_isotop_items_details row">
-                <div class="col-md-4 cs_item cs_tech ">
-                    <a href="./portfolio-details/tech/aion_tech.html" class="cs_portfolio cs_style_1">
-                        <div class="cs_portfolio_img">
-                            <img src="./assets/img/logos/logo_46.png" class="img-fluid" alt="Aion Tech Logo" />
-                        </div>
-                        <div class="cs_portfolio_overlay"></div>
-                        <div class="cs_portfolio_info">
-                            <h2 class="cs_portfolio_title">Aion Tech</h2>
-                            <div class="cs_portfolio_subtitle">Website Design</div>
-                        </div>
-                    </a>
-                </div>
+  .portfolio-section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 
-                <div class="col-md-4 cs_item cs_healthcare">
-                    <a href="./portfolio-details/health/task_manager.html" class="cs_portfolio cs_style_1">
-                        <div class="cs_portfolio_img">
-                            <img src="assets/img/portfolio_2.jpg" class="img-fluid" alt="Healthcare Task Manager App Screenshot" />
-                        </div>
-                        <div class="cs_portfolio_overlay"></div>
-                        <div class="cs_portfolio_info">
-                            <h2 class="cs_portfolio_title">MediTrack System</h2>
-                            <div class="cs_portfolio_subtitle">Health-Care / Task Management</div>
-                        </div>
-                    </a>
-                </div>
+  .filter-menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 50px;
+  }
 
-                <div class="col-md-4 cs_item cs_healthcare cs_lifestyle cs_tech">
-                    <a href="./portfolio-details/tech/ui_design_app.html" class="cs_portfolio cs_style_1">
-                        <div class="cs_portfolio_img">
-                            <img src="assets/img/portfolio_3.jpg" class="img-fluid" alt="Mobile App UI Design for Healthcare" />
-                        </div>
-                        <div class="cs_portfolio_overlay"></div>
-                        <div class="cs_portfolio_info">
-                            <h2 class="cs_portfolio_title">HealthPal UI</h2>
-                            <div class="cs_portfolio_subtitle">UI Design / Mobile App</div>
-                        </div>
-                    </a>
-                </div>
+  .filter-menu a {
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 30px;
+    background: #e4e6eb;
+    color: #333;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-                <div class="col-md-4 cs_item cs_healthcare cs_lifestyle cs_tech">
-                    <a href="./portfolio-details/health/telemed_app.html" class="cs_portfolio cs_style_1">
-                        <div class="cs_portfolio_img">
-                            <img src="assets/img/portfolio_5.jpg" class="img-fluid" alt="Telemedicine Platform Screenshot" />
-                        </div>
-                        <div class="cs_portfolio_overlay"></div>
-                        <div class="cs_portfolio_info">
-                            <h2 class="cs_portfolio_title">TeleMed App</h2>
-                            <div class="cs_portfolio_subtitle">Digital Health / App Design</div>
-                        </div>
-                    </a>
-                </div>
+  .filter-menu a.active,
+  .filter-menu a:hover {
+    background:crimson;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+  }
 
-                <div class="col-md-4 cs_item cs_healthcare cs_realestate">
-                    <a href="./portfolio-details/realestate/propconnect.html" class="cs_portfolio cs_style_1">
-                        <div class="cs_portfolio_img">
-                            <img src="assets/img/portfolio_6.jpg" class="img-fluid" alt="Property Management System UI" />
-                        </div>
-                        <div class="cs_portfolio_overlay"></div>
-                        <div class="cs_portfolio_info">
-                            <h2 class="cs_portfolio_title">PropConnect</h2>
-                            <div class="cs_portfolio_subtitle">Real Estate Platform</div>
-                        </div>
-                    </a>
-                </div>
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+  }
 
-                <div class="col-md-4 cs_item cs_healthcare">
-                    <a href="./portfolio-details/health/mentalcare.html" class="cs_portfolio cs_style_1">
-                        <div class="cs_portfolio_img">
-                            <img src="assets/img/portfolio_7.jpg" class="img-fluid" alt="Mental Health App Screenshot" />
-                        </div>
-                        <div class="cs_portfolio_overlay"></div>
-                        <div class="cs_portfolio_info">
-                            <h2 class="cs_portfolio_title">MentalCare App</h2>
-                            <div class="cs_portfolio_subtitle">Health-Care / Therapy Access</div>
-                        </div>
-                    </a>
-                </div>
+  .portfolio-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: block; /* default visible */
+  }
 
-                <div class="col-md-4 cs_item cs_tech cs_realestate">
-                    <a href="./portfolio-details/realestate/analytics_tool.html" class="cs_portfolio cs_style_1">
-                        <div class="cs_portfolio_img">
-                            <img src="assets/img/portfolio_8.jpg" class="img-fluid" alt="Analytics Tool Screenshot" />
-                        </div>
-                        <div class="cs_portfolio_overlay"></div>
-                        <div class="cs_portfolio_info">
-                            <h2 class="cs_portfolio_title">Analytics Tool</h2>
-                            <div class="cs_portfolio_subtitle">Dashboard / Real Estate</div>
-                        </div>
-                    </a>
-                </div>
+  .portfolio-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  }
 
-                <div class="col-md-4 cs_item cs_healthcare cs_lifestyle cs_realestate">
-                    <a href="./portfolio-details/lifestyle/lifestyle_tracker.html" class="cs_portfolio cs_style_1">
-                        <div class="cs_portfolio_img">
-                            <img src="assets/img/portfolio_9.jpg" class="img-fluid" alt="Lifestyle Tracker Screenshot" />
-                        </div>
-                        <div class="cs_portfolio_overlay"></div>
-                        <div class="cs_portfolio_info">
-                            <h2 class="cs_portfolio_title">Lifestyle Tracker</h2>
-                            <div class="cs_portfolio_subtitle">Life-Style / Wellness App</div>
-                        </div>
-                    </a>
-                </div>
+  .portfolio-image {
+    height: 180px;
+    background-color: #f1f3f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
 
-                <div class="col-md-4 cs_item cs_healthcare cs_lifestyle cs_tech">
-                    <a href="./portfolio-details/tech/scheduling_app.html" class="cs_portfolio cs_style_1">
-                        <div class="cs_portfolio_img">
-                            <img src="assets/img/portfolio_10.jpg" class="img-fluid" alt="Appointment Scheduling App Screenshot" />
-                        </div>
-                        <div class="cs_portfolio_overlay"></div>
-                        <div class="cs_portfolio_info">
-                            <h2 class="cs_portfolio_title">EasySchedule</h2>
-                            <div class="cs_portfolio_subtitle">Scheduling App / UI/UX</div>
-                        </div>
-                    </a>
-                </div>
+  .portfolio-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
 
-                <div class="col-md-4 cs_item cs_healthcare cs_lifestyle cs_tech">
-                    <a href="./portfolio-details/tech/fitness_ui.html" class="cs_portfolio cs_style_1">
-                        <div class="cs_portfolio_img">
-                            <img src="assets/img/portfolio_11.jpg" class="img-fluid" alt="Fitness Tracking App Design" />
-                        </div>
-                        <div class="cs_portfolio_overlay"></div>
-                        <div class="cs_portfolio_info">
-                            <h2 class="cs_portfolio_title">FitTrack UI</h2>
-                            <div class="cs_portfolio_subtitle">Life-Style / Fitness App</div>
-                        </div>
-                    </a>
-                </div>
+  .portfolio-info {
+    padding: 20px;
+    text-align: center;
+  }
 
-                <div class="col-md-4 cs_item cs_healthcare cs_realestate">
-                    <a href="./portfolio-details/realestate/tenant_portal.html" class="cs_portfolio cs_style_1">
-                        <div class="cs_portfolio_img">
-                            <img src="assets/img/portfolio_12.jpg" class="img-fluid" alt="Tenant Portal Interface" />
-                        </div>
-                        <div class="cs_portfolio_overlay"></div>
-                        <div class="cs_portfolio_info">
-                            <h2 class="cs_portfolio_title">Tenant Portal</h2>
-                            <div class="cs_portfolio_subtitle">Real Estate / Portal Design</div>
-                        </div>
-                    </a>
-                </div>
+  .portfolio-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #222;
+  }
 
-                <div class="col-md-4 cs_item cs_healthcare">
-                    <a href="./portfolio-details/health/nutrition_guide.html" class="cs_portfolio cs_style_1">
-                        <div class="cs_portfolio_img">
-                            <img src="assets/img/portfolio_13.jpg" class="img-fluid" alt="Nutrition Guide App Interface" />
-                        </div>
-                        <div class="cs_portfolio_overlay"></div>
-                        <div class="cs_portfolio_info">
-                            <h2 class="cs_portfolio_title">Nutrition Guide</h2>
-                            <div class="cs_portfolio_subtitle">Health-Care / Food & Wellness</div>
-                        </div>
-                    </a>
-                </div>
-            </div>
+  .portfolio-subtitle {
+    font-size: 14px;
+    color: #666;
+  }
+
+  @media (max-width: 480px) {
+    .filter-menu {
+      gap: 8px;
+    }
+
+    .filter-menu a {
+      padding: 8px 14px;
+      font-size: 14px;
+    }
+  }
+</style>
+<section class="portfolio-section">
+  <div class="filter-menu">
+    <a href="#" class="active" data-filter="all">All</a>
+    <a href="#" data-filter="tech">Tech</a>
+    <a href="#" data-filter="networking">Networking</a>
+    <a href="#" data-filter="health-care">Health-Care</a>
+    <a href="#" data-filter="real-estate">Real-Estate</a>
+    <a href="#" data-filter="education">Education</a>
+    <a href="#" data-filter="life-style">Life-Style</a>
+  </div>
+  <!-- Tech projects starts here  -->
+  <div class="portfolio-grid">
+    <div class="portfolio-card" data-category="tech">
+      <a href="./portfolio-details/tech/aion_tech.html">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/tech/logo_46.png" alt="Aion Tech Logo" />
         </div>
-
-        <div class="cs_height_70 cs_height_lg_30"></div>
-        <div>
-            <div class="cs_hero_btn_wrap text-center">
-                <div class="cs_round_btn_wrap">
-                    <a href="#" class="cs_hero_btn cs_round_btn btn-item"><span></span> Load More</a>
-                </div>
-            </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">AION TECH</div>
+          <div class="portfolio-subtitle">Website Design</div>
         </div>
+      </a>
     </div>
+    <!-- Tech projects ends here  -->
+    <!-- Networking projects  starts here -->
+    <div class="portfolio-card" data-category="networking">
+      <a href="./portfolio-details/networking/dvpl.html">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/networking/logo24.png" alt="Networking Project" />
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">DVPL (D-Atum Vilcom Pvt Ltd)</div>
+          <div class="portfolio-subtitle">Infrastructure Setup</div>
+        </div>
+      </a>
+    </div>
+    <!-- Networking projects  Ends here -->
+    <!-- Health-Care projects starts here -->
+    <div class="portfolio-card" data-category="health-care">
+      <a href="#">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/healthcare/logo2.png" alt="Health Care Project" />
+        </div>
+        <div class="portfolio-info">
+        <div class="portfolio-title">MEDWISE HOSPTIAL</div>
+          <div class="portfolio-subtitle">Mobile App</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="portfolio-card" data-category="health-care">
+      <a href="#">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/healthcare/logo3.png" alt="Health Care Project"  />
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">DR. PRAVEEN MEREREDDY</div>
+          <div class="portfolio-subtitle">Web Platform</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="portfolio-card" data-category="health-care">
+      <a href="#">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/healthcare/logo23.png" alt="Health Care Project" />
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">EduLearn</div>
+          <div class="portfolio-subtitle">Online Courses</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="portfolio-card" data-category="health-care">
+      <a href="#">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/healthcare/logo28.png" alt="Health Care Project" />
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">EduLearn</div>
+          <div class="portfolio-subtitle">Online Courses</div>
+        </div>
+      </a>
+    </div>
+
+     <div class="portfolio-card" data-category="health-care">
+      <a href="#">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/healthcare/logo29.png" alt="Health Care Project" />
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">EduLearn</div>
+          <div class="portfolio-subtitle">Online Courses</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="portfolio-card" data-category="health-care">
+      <a href="#">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/healthcare/logo30.png" alt="Health Care Project" />
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">EduLearn</div>
+          <div class="portfolio-subtitle">Online Courses</div>
+        </div>
+      </a>
+    </div>
+
+     <div class="portfolio-card" data-category="health-care">
+      <a href="#">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/healthcare/logo31.png" alt="Health Care Project" />
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">EduLearn</div>
+          <div class="portfolio-subtitle">Online Courses</div>
+        </div>
+      </a>
+    </div>
+
+     <div class="portfolio-card" data-category="health-care">
+      <a href="#">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/healthcare/logo44.png" alt="Health Care Project" />
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">EduLearn</div>
+          <div class="portfolio-subtitle">Online Courses</div>
+        </div>
+      </a>
+    </div>
+
+     <div class="portfolio-card" data-category="health-care">
+      <a href="#">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/healthcare/logo45.png" alt="Health Care Project" />
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">EduLearn</div>
+          <div class="portfolio-subtitle">Online Courses</div>
+        </div>
+      </a>
+    </div>
+    <!-- Health-Care projects Ends here -->
+    <!-- Real-Estate projects starts here -->
+    <div class="portfolio-card" data-category="real-estate">
+      <a href="#">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/real-estate/logo1.png" alt="Real-Estate Project" />
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">StyleLife</div>
+          <div class="portfolio-subtitle">Blog & Shop</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="portfolio-card" data-category="real-estate">
+      <a href="#">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/real-estate/logo4.png" alt="Real-Estate Project" />
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">StyleLife</div>
+          <div class="portfolio-subtitle">Blog & Shop</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="portfolio-card" data-category="real-estate">
+      <a href="#">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/real-estate/logo5.png" alt="Real-Estate Project" />
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">StyleLife</div>
+          <div class="portfolio-subtitle">Blog & Shop</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="portfolio-card" data-category="real-estate">
+      <a href="#">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/real-estate/logo6.png" alt="Real-Estate Project" />
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">StyleLife</div>
+          <div class="portfolio-subtitle">Blog & Shop</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="portfolio-card" data-category="real-estate">
+      <a href="#">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/real-estate/logo7.png" alt="Real-Estate Project" />
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">StyleLife</div>
+          <div class="portfolio-subtitle">Blog & Shop</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="portfolio-card" data-category="real-estate">
+      <a href="#">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/real-estate/logo8.png" alt="Real-Estate Project" />
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">StyleLife</div>
+          <div class="portfolio-subtitle">Blog & Shop</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="portfolio-card" data-category="real-estate">
+      <a href="#">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/real-estate/logo9.png" alt="Real-Estate Project" />
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">StyleLife</div>
+          <div class="portfolio-subtitle">Blog & Shop</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="portfolio-card" data-category="real-estate">
+      <a href="#">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/real-estate/logo10.png" alt="Real-Estate Project" />
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">StyleLife</div>
+          <div class="portfolio-subtitle">Blog & Shop</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="portfolio-card" data-category="real-estate">
+      <a href="#">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/real-estate/logo11.png" alt="Real-Estate Project" />
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">StyleLife</div>
+          <div class="portfolio-subtitle">Blog & Shop</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="portfolio-card" data-category="real-estate">
+      <a href="#">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/real-estate/logo12.png" alt="Real-Estate Project" />
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">StyleLife</div>
+          <div class="portfolio-subtitle">Blog & Shop</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="portfolio-card" data-category="real-estate">
+      <a href="#">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/real-estate/logo13.png" alt="Real-Estate Project" />
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">StyleLife</div>
+          <div class="portfolio-subtitle">Blog & Shop</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="portfolio-card" data-category="real-estate">
+      <a href="#">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/real-estate/logo14.png" alt="Real-Estate Project" />
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">StyleLife</div>
+          <div class="portfolio-subtitle">Blog & Shop</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="portfolio-card" data-category="real-estate">
+      <a href="#">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/real-estate/logo15.png" alt="Real-Estate Project" />
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">StyleLife</div>
+          <div class="portfolio-subtitle">Blog & Shop</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="portfolio-card" data-category="real-estate">
+      <a href="#">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/real-estate/logo16.png" alt="Real-Estate Project" />
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">StyleLife</div>
+          <div class="portfolio-subtitle">Blog & Shop</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="portfolio-card" data-category="real-estate">
+      <a href="#">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/real-estate/logo17.png" alt="Real-Estate Project" />
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">StyleLife</div>
+          <div class="portfolio-subtitle">Blog & Shop</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="portfolio-card" data-category="real-estate">
+      <a href="#">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/real-estate/logo18.png" alt="Real-Estate Project" />
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">StyleLife</div>
+          <div class="portfolio-subtitle">Blog & Shop</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="portfolio-card" data-category="real-estate">
+      <a href="#">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/real-estate/logo19.png" alt="Real-Estate Project" />
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">StyleLife</div>
+          <div class="portfolio-subtitle">Blog & Shop</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="portfolio-card" data-category="real-estate">
+      <a href="#">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/real-estate/logo20.png" alt="Real-Estate Project" />
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">StyleLife</div>
+          <div class="portfolio-subtitle">Blog & Shop</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="portfolio-card" data-category="real-estate">
+      <a href="#">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/real-estate/logo21.png" alt="Real-Estate Project" />
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">StyleLife</div>
+          <div class="portfolio-subtitle">Blog & Shop</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="portfolio-card" data-category="real-estate">
+      <a href="#">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/real-estate/logo25.png" alt="Real-Estate Project" />
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">StyleLife</div>
+          <div class="portfolio-subtitle">Blog & Shop</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="portfolio-card" data-category="real-estate">
+      <a href="#">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/real-estate/logo26.png" alt="Real-Estate Project" />
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">StyleLife</div>
+          <div class="portfolio-subtitle">Blog & Shop</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="portfolio-card" data-category="real-estate">
+      <a href="#">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/real-estate/logo27.png" alt="Real-Estate Project" />
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">StyleLife</div>
+          <div class="portfolio-subtitle">Blog & Shop</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="portfolio-card" data-category="real-estate">
+      <a href="#">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/real-estate/logo32.png" alt="Real-Estate Project" />
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">StyleLife</div>
+          <div class="portfolio-subtitle">Blog & Shop</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="portfolio-card" data-category="real-estate">
+      <a href="#">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/real-estate/logo33.png" alt="Real-Estate Project" />
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">StyleLife</div>
+          <div class="portfolio-subtitle">Blog & Shop</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="portfolio-card" data-category="real-estate">
+      <a href="#">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/real-estate/logo34.png" alt="Real-Estate Project" />
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">StyleLife</div>
+          <div class="portfolio-subtitle">Blog & Shop</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="portfolio-card" data-category="real-estate">
+      <a href="#">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/real-estate/logo36.png" alt="Real-Estate Project" />
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">StyleLife</div>
+          <div class="portfolio-subtitle">Blog & Shop</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="portfolio-card" data-category="real-estate">
+      <a href="#">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/real-estate/logo37.png" alt="Real-Estate Project" />
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">StyleLife</div>
+          <div class="portfolio-subtitle">Blog & Shop</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="portfolio-card" data-category="real-estate">
+      <a href="#">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/real-estate/logo38.png" alt="Real-Estate Project" />
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">StyleLife</div>
+          <div class="portfolio-subtitle">Blog & Shop</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="portfolio-card" data-category="real-estate">
+      <a href="#">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/real-estate/logo39.png" alt="Real-Estate Project" />
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">StyleLife</div>
+          <div class="portfolio-subtitle">Blog & Shop</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="portfolio-card" data-category="real-estate">
+      <a href="#">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/real-estate/logo40.png" alt="Real-Estate Project" />
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">StyleLife</div>
+          <div class="portfolio-subtitle">Blog & Shop</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="portfolio-card" data-category="real-estate">
+      <a href="#">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/real-estate/logo41.png" alt="Real-Estate Project" />
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">StyleLife</div>
+          <div class="portfolio-subtitle">Blog & Shop</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="portfolio-card" data-category="real-estate">
+      <a href="#">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/real-estate/logo42.png" alt="Real-Estate Project" />
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">StyleLife</div>
+          <div class="portfolio-subtitle">Blog & Shop</div>
+        </div>
+      </a>
+    </div>
+    <!-- Real-Estate projects Ends here -->
+    <!-- Education projects starts here -->
+     <div class="portfolio-card" data-category="education">
+      <a href="./portfolio-details/education/tejas-defence-academy.html">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/education/logo43.png" alt="Education Project" />
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">StyleLife</div>
+          <div class="portfolio-subtitle">Blog & Shop</div>
+        </div>
+      </a>
+    </div>
+    <!-- Education projects Ends here -->
+     <!-- Life style projects starts here -->
+      <div class="portfolio-card" data-category="life-style">
+      <a href="./portfolio-details/life-style/bean.html">
+        <div class="portfolio-image">
+          <img src="./assets/img/portfolio/logos/life-style/logo22.png" alt="Life-style Project" />
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">StyleLife</div>
+          <div class="portfolio-subtitle">Blog & Shop</div>
+        </div>
+      </a>
+    </div>
+    <!-- Life style projects Ends here -->
+
+  </div>
 </section>
+
+<script>
+  const filterLinks = document.querySelectorAll('.filter-menu a');
+  const portfolioCards = document.querySelectorAll('.portfolio-card');
+
+  filterLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+
+      // Remove active class from all links
+      filterLinks.forEach(l => l.classList.remove('active'));
+
+      // Add active class to clicked link
+      link.classList.add('active');
+
+      const filter = link.getAttribute('data-filter');
+
+      portfolioCards.forEach(card => {
+        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+
+
+
 <!-- End Some Recent Project Show -->
 
         <!-- Start serction about your project. header-->
@@ -525,8 +1036,8 @@
         </svg>
     </span>
     <!-- Script -->
-    <script src="assets/js/plugins/jquery-3.7.0.min.js"></script>
-    <script src="assets/js/plugins/isotope.pkg.min.js"></script>
+    <script src="assets/js/plugins/jquery-3.7.0.min.js"></scrip>
+    <script src="assets/js/plugins/isotope.pkg.min.js"></>
     <script src="assets/js/plugins/swiper.min.js"></script>
     <script src="assets/js/plugins/lightgallery.min.js"></script>
     <script src="assets/js/plugins/SplitText.min.js"></script>

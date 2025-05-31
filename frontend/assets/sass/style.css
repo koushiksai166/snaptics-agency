@@ -6830,9 +6830,14 @@ label {
   }
 }
 
-.cs_main_header img {
-  margin-top: 30px;
+.cs_main_header img  {
+    margin-top:30px;
 }
 
+@media screen and (max-width: 1024px) {
+  .cs_main_header img {
+    margin:0px
+  }
+}
 
 
