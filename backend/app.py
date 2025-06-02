@@ -5,7 +5,9 @@ from email.mime.text import MIMEText
 import os
 
 app = Flask(__name__)
-CORS(app)  # Allows requests from different ports (like 5501)
+
+# ✅ Allow only your Netlify frontend to make requests
+CORS(app, origins=["https://snaptics-agency.netlify.app"])
 
 @app.route('/send-email', methods=['POST'])
 def send_email():
@@ -43,5 +45,5 @@ def send_email():
         return jsonify({"status": "error", "message": str(e)})
 
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 5000))  # Use PORT from environment if available
+    port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port, debug=True)
