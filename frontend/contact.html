@@ -676,33 +676,34 @@
     <script src="assets/js/plugins/gsap.min.js"></script>
     <script src="assets/js/main.js"></script>
 
-    <script>
-      document
-        .getElementById("contactForm")
-        .addEventListener("submit", function (e) {
-          e.preventDefault(); // Prevent page reload
+   <script>
+  document
+    .getElementById("contactForm")
+    .addEventListener("submit", function (e) {
+      e.preventDefault(); // Prevent page reload
 
-          const form = e.target;
-          const formData = new FormData(form);
+      const form = e.target;
+      const formData = new FormData(form);
 
-          fetch("https://snaptics-agency.onrender.com/send-email", {
-            method: "POST",
-            body: formData,
-          })
-            .then((response) => response.json())
-            .then((data) => {
-              if (data.status === "success") {
-                alert("Email has been sent successfully!");
-                form.reset();
-              } else {
-                alert("Error: " + data.message);
-              }
-            })
-            .catch((error) => {
-              alert("Server error: " + error);
-            });
+      fetch("https://snaptics-agency.onrender.com/send-email", {
+        method: "POST",
+        body: formData,
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.status === "success") {
+            alert("Email has been sent successfully!");
+            form.reset();
+          } else {
+            alert("Error: " + data.message);
+          }
+        })
+        .catch((error) => {
+          alert("Server error: " + error);
         });
-    </script>
+    });
+</script>
+
   </body>
 
   <!-- Mirrored from vixan-theme-march.vercel.app/vixan_main/contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 28 Apr 2025 09:36:06 GMT -->
