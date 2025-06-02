@@ -6,8 +6,11 @@ import os
 
 app = Flask(__name__)
 
-# ✅ Allow only your Netlify frontend to make requests
-CORS(app, origins=["https://snaptics-agency.netlify.app"])
+# ✅ Allow both Netlify and localhost frontend to access backend
+CORS(app, origins=[
+    "https://snaptics-agency.netlify.app",   # your live site
+    "http://127.0.0.1:5500"                  # local testing
+])
 
 @app.route('/send-email', methods=['POST'])
 def send_email():
