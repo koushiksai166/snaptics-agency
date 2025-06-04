@@ -22,7 +22,7 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(234, 234, 246, 0.5), rgba(137, 137, 247, 0.4)), url('');
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(24, 20, 20, 0.4)), url('');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -62,7 +62,7 @@ body {
 
 .portfolio-info {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
     gap: 20px;
     margin-bottom: 50px;
 }
@@ -103,7 +103,7 @@ body {
     list-style: none;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 20px;
 }
 
