@@ -1,6 +1,6 @@
 /* Base Styles */
 :root {
-    --primary-color: lightgreen;
+    --primary-color: #6eb4ff;
     --secondary-color: rgb(234, 234, 246);
     --accent-color: #ff6b6b;
     --text-color: #333;
@@ -22,77 +22,27 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(24, 20, 20, 0.3)), 
-                url('/frontend/assets/img/portfolio/logos/healthcare/logo2.png');
-    background-size: contain; 
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(24, 20, 20, 0.3)), url('');
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    color: #fff;
-    padding: 120px 20px;
+    color: rgb(255, 255, 255);
+    padding: 150px ;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 .hero h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 20px;
     animation: fadeIn 2s ease-in;
-    line-height: 1.2;
 }
 
 .hero p {
-    font-size: 1rem;
-    max-width: 90%;
+    font-size: 1.2rem;
+    max-width: 700px;
     margin: 0 auto 30px;
     animation: fadeIn 2.5s ease-in;
 }
-
-/* Responsive Design */
-
-@media (min-width: 576px) {
-    .hero h1 {
-        font-size: 2.8rem;
-    }
-
-    .hero p {
-        font-size: 1.1rem;
-        max-width: 80%;
-    }
-}
-
-@media (min-width: 768px) {
-    .hero {
-        padding: 140px 40px;
-    }
-
-    .hero h1 {
-        font-size: 3rem;
-    }
-
-    .hero p {
-        font-size: 1.2rem;
-        max-width: 70%;
-    }
-}
-
-@media (min-width: 992px) {
-    .hero {
-        padding: 160px 60px;
-    }
-
-    .hero h1 {
-        font-size: 3.5rem;
-    }
-
-    .hero p {
-        font-size: 1.25rem;
-        max-width: 700px;
-    }
-}
-
 
 /* Portfolio Details */
 .portfolio-details {

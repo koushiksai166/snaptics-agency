@@ -22,7 +22,7 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(24, 20, 20, 0.4)), url('');
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(24, 20, 20, 0.3)), url('');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
